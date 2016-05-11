@@ -1,0 +1,8 @@
+name: httpserver_example
+nodes:
+    - ./xocloud_nodes/master.yml
+    - ./xocloud_nodes/frontend/frontend1.yml
+    - ./xocloud_nodes/frontend/frontend2.yml
+    - ./xocloud_nodes/db/db1.yml
+composeFiles:
+    - ./compose.yml

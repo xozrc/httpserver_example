@@ -1,0 +1,23 @@
+name: db1
+driver: virtualbox
+swarm:
+    swarm: true
+    host: "tcp://0.0.0.0:3376"
+    image: "swarm:latest"
+    strategy: spread
+    discovery: "consul://192.168.99.101:8500/"
+    master: false
+    isExperimental: false
+    # it seems no nesscerray
+    #address:
+engine:
+    labels: 
+        - "com.function=db"
+    installURL: "https://get.docker.com"
+    opts:  
+        - "cluster-store=consul://192.168.99.101:8500/"
+        - "cluster-advertise=eth1:2376"
+    storageDriver: aufs
+    registryMirror: 
+        - "https://qca2pqmt.mirror.aliyuncs.com"
+

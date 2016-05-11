@@ -1,0 +1,10 @@
+web:
+    build: .
+    ports: 
+        - "80"
+    environment:
+        - "constraint:com.function==frontend"
+redis:
+    image: redis:latest
+
+    
